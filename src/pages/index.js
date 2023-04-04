@@ -2,7 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-
+import Navbar from '@/components/Header/Navbar'
+import {FiPhoneCall} from 'react-icons/fi'
+import {AiOutlineMail} from 'react-icons/ai'
+import Link from 'next/link'
+import Footer from '@/components/Footer/Footer'
+import Hero from '@/components/Hero/Hero'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -14,7 +19,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <div className='relative'>
+          <div className='absolute right-0 top-64 '>
+              <div className='flex flex-col items-center '>
+                  <div className='border-2 p-2'>
+                    <Link href="tel:7668088539"><h3 className='text-2xl'><FiPhoneCall/></h3></Link>
+                  </div>
+                  <div className='border-2 p-2'>
+                    <Link href="mailto:artravellers98@gmail.com"><h3 className='text-2xl'><AiOutlineMail/></h3></Link>
+                  </div>
+              </div>
+          </div>
+            <Navbar/>
+            <Hero/>
+            <Footer/>
+      </div>
     </>
   )
 }
